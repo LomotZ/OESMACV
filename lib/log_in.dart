@@ -25,10 +25,15 @@ class _StudentLogin extends State<StudentLogin> {
       mainAxisAlignment: MainAxisAlignment.center,
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
+        Image.asset(
+          'Images/SMACV_LOGO.png',
+          height: 100,
+          width: 100,
+        ),
         const Text(
           'Student Login',
           style: TextStyle(
-            fontSize: 40,
+            fontSize: 30,
             color: Colors.blue,
             fontWeight: FontWeight.bold,
           ),
@@ -42,11 +47,13 @@ class _StudentLogin extends State<StudentLogin> {
                   padding: const EdgeInsets.symmetric(horizontal: 20),
                   child: TextFormField(
                     keyboardType: TextInputType.emailAddress,
-                    decoration: const InputDecoration(
+                    decoration: InputDecoration(
                       labelText: 'Email',
                       hintText: 'Student Email',
-                      prefixIcon: Icon(Icons.email),
-                      border: OutlineInputBorder(),
+                      prefixIcon: const Icon(Icons.email),
+                      border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(20.0),
+                      ),
                     ),
 
                     //The input variable will stored in value so you can get it.
@@ -60,7 +67,7 @@ class _StudentLogin extends State<StudentLogin> {
                 const SizedBox(
                   height: 40,
                 ),
-              Padding(
+                Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 20),
                   child: TextFormField(
                     keyboardType: TextInputType.visiblePassword,
@@ -79,7 +86,9 @@ class _StudentLogin extends State<StudentLogin> {
                             : Icons.visibility_off),
                       ),
                       prefixIcon: const Icon(Icons.password),
-                      border: const OutlineInputBorder(),
+                      border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(20.0),
+                      ),
                     ),
 
                     //The input variable will stored in value so you can get it.
