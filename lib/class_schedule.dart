@@ -8,7 +8,7 @@ class ClassSchedule extends StatefulWidget {
 }
 
 class _ClassScheduleState extends State<ClassSchedule> {
-  var WeekDays = [
+  var weekDays = [
     'Monday',
     'Tuesday',
     'Wednesday',
@@ -26,7 +26,7 @@ class _ClassScheduleState extends State<ClassSchedule> {
           'Class Schedule',
         ),
       ),
-      body: DropDownButton(),
+      body: const DropDownButton(),
     );
   }
 }
@@ -39,7 +39,7 @@ class DropDownButton extends StatefulWidget {
 }
 
 class _DropDownButtonState extends State<DropDownButton> {
-  var WeekDays = [
+  var weekDays = [
     'Monday',
     'Tuesday',
     'Wednesday',
@@ -51,26 +51,24 @@ class _DropDownButtonState extends State<DropDownButton> {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: Center(
-        child: Column(
-          children: [
-            DropdownButton<String>(
-              items: WeekDays.map((String dropDownStringItem) {
-                return DropdownMenuItem<String>(
-                  value: dropDownStringItem,
-                  child: Text(dropDownStringItem),
-                );
-              }).toList(),
-              onChanged: (String? value) {
-                // This is called when the user selects an item.
-                setState(() {
-                  WeekDays = value! as List<String>;
-                });
-              },
-            ),
-          ],
-        ),
+    return Center(
+      child: Column(
+        children: [
+          DropdownButton<String>(
+            items: weekDays.map((String dropDownStringItem) {
+              return DropdownMenuItem<String>(
+                value: dropDownStringItem,
+                child: Text(dropDownStringItem),
+              );
+            }).toList(),
+            onChanged: (String? value) {
+              // This is called when the user selects an item.
+              setState(() {
+                weekDays = value! as List<String>;
+              });
+            },
+          ),
+        ],
       ),
     );
   }
